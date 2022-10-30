@@ -1,18 +1,20 @@
-import './App.css';
+import React, {useState} from 'react'; 
+import {SliderComponent} from '.components';
+import './app.css'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-       
-        <p className="contenedor">
-        <input type="range" />
-      
-        </p>
-        
-      </header>
-    </div>
+  const [value, setValue] = useState(50)
+
+  const handleChange = (event) =>{
+    setValue(event.target.value);
+  }
+  return ( 
+  <AppContainer>
+    <h2>{value}</h2>
+    <SliderComponent/>
+  </AppContainer>
   );
 }
 
 export default App;
+
